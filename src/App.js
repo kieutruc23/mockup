@@ -1,23 +1,46 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React, { useState } from 'react';
+import UserInfoCard from './component/User';
 function App() {
+  const [userCards, setUserCards] = useState([]);
+  const maxCards = 5;
+
+  const handleAddCard = () => {
+    if (userCards.length < maxCards) {
+      setUserCards((prevCards) => [
+        ...prevCards,
+        <UserInfoCard
+          key={prevCards.length}
+          stt={prevCards.length + 1}
+          onDelete={() => handleDeleteCard(prevCards.length)}
+          onMoveUp={() => handleMoveCard(prevCards.length, -1)}
+          onMoveDown={() => handleMoveCard(prevCards.length, 1)}
+        />,
+      ]);
+    }
+  };
+
+  const handleDeleteCard = (index) => {
+    setUserCards((prevCards) => prevCards.filter((_, i) => i !== index));
+  };
+
+  const handleMoveCard = (index, direction) => {
+    if (index + direction >= 0 && index + direction < userCards.length) {
+      const newCards = [...userCards];
+      [newCards[index], newCards[index + direction]] = [
+        newCards[index + direction],
+        newCards[index],
+      ];
+      setUserCards(newCards);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={handleAddCard} disabled={userCards.length >= maxCards}>
+        Thêm
+      </button>
+      {userCards}
     </div>
   );
 }

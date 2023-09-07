@@ -11,3 +11,78 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+button {
+  background-color: rgb(2, 219, 197);
+  color: white; 
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #014b1e;
+}
+
+.user-card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 16px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.user-info p {
+  margin: 0;
+}
+
+.user-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-input label {
+  font-weight: bold;
+}
+
+.user-input input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.user-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.user-buttons button {
+  padding: 8px 16px;
+  background-color: #10cfa6;
+  color: white;
+  border: none;
+
+}
+
+.user-buttons button:hover {
+  background-color: #f83a3a;
+}
+
+.user-buttons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
