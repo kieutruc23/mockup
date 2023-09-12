@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const UserInfoCard = ({ stt, onDelete, onMoveUp, onMoveDown }) => {
   const [username, setUsername] = useState(`Person ${stt}`);
-  const [age, setAge] = useState(1);
+  const [age, setAge] = useState(18);
 
   return (
     <div className="user-card">
@@ -26,8 +26,11 @@ const UserInfoCard = ({ stt, onDelete, onMoveUp, onMoveDown }) => {
       </div>
       <div className="user-buttons">
         <button onClick={onDelete}>Delete</button>
-        <button onClick={onMoveUp}>Up</button>
+     <div>
+     <button onClick={ onMoveUp}>Up</button>
         <button onClick={onMoveDown}>Down</button>
+     </div>
+
       </div>
     </div>
   );

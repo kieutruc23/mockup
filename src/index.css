@@ -1,16 +1,4 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
 button {
   background-color: rgb(2, 219, 197);
@@ -21,7 +9,7 @@ button {
   cursor: pointer;
 }
 button:hover {
-  background-color: #014b1e;
+  background-color: #f67310;
 }
 
 .user-card {
@@ -33,7 +21,7 @@ button:hover {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 .user-info {
@@ -67,6 +55,7 @@ button:hover {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding: 20px;
 }
 
 .user-buttons button {

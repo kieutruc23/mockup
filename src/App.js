@@ -14,7 +14,7 @@ function App() {
           stt={prevCards.length + 1}
           onDelete={() => handleDeleteCard(prevCards.length)}
           onMoveUp={() => handleMoveCard(prevCards.length, -1)}
-          onMoveDown={() => handleMoveCard(prevCards.length, 1)}
+          onMoveDown={() => handleMoveCard(prevCards.length + 1)}
         />,
       ]);
     }
@@ -26,14 +26,17 @@ function App() {
 
   const handleMoveCard = (index, direction) => {
     if (index + direction >= 0 && index + direction < userCards.length) {
-      const newCards = [...userCards];
-      [newCards[index], newCards[index + direction]] = [
-        newCards[index + direction],
-        newCards[index],
-      ];
-      setUserCards(newCards);
+      setUserCards((prevCards) => {
+        const newCards = [...prevCards];
+        [newCards[index], newCards[index + direction]] = [
+          newCards[index + direction],
+          newCards[index],
+        ];
+        return newCards;
+      });
     }
   };
+  
 
   return (
     <div className="App">
